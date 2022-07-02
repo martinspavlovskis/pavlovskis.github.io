@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ECF</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+function cdtd() {
+	var date = new Date("July 21, 2022 09:00:00");
+	var now = new Date();
+	var timeDiff = date.getTime() - now.getTime();
+	if (timeDiff <= 0) {
+                clearTimeout(timer);
+		document.write("Team Building is Here!");
+        }
+	var seconds = Math.floor(timeDiff / 1000);
+	var minutes = Math.floor(seconds / 60);
+	var hours = Math.floor(minutes / 60);
+	var days = Math.floor(hours / 24);
+	hours %= 24;
+        minutes %= 60;
+        seconds %= 60;
+	document.getElementById("daysBox").innerHTML = days + ' days';
+	document.getElementById("hoursBox").innerHTML = hours + ' hours';
+	document.getElementById("minsBox").innerHTML = minutes  + ' minutes';
+	document.getElementById("secsBox").innerHTML = seconds + ' seconds';
+	var timer = setTimeout('cdtd()',1000);
+}
+</script>
+  </head>
+  <body>
+    <div id="container">
+  <div id="main">
+  <p id="daysBox"></p>
+  <p id="hoursBox"></p>
+  <p id="minsBox"></p>
+  <p id="secsBox"></p>
+</div>
+  <div id="text">Until ECF Summer Team Building</div>
+</div>
+  <script type="text/javascript">cdtd();</script>
+  </body>
+</html>
